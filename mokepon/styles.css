@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300&display=swap');
+
+
+body{
+    font-family: 'Concert One', cursive;
+    background-color: #bdb9e4;
+}
+
+h1 {
+    color: white;  
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    color: white;
+    font-size: 58px;   
+    margin: 20px 0 20px 20px;
+}
+
+#seleccionar_mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tarjetas, .botones_ataque {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0px 10px 0px;
+}
+
+.tarjeta-de-mokepon
+{
+    width: 170px;
+    height: 100px;
+    background: #CBA0AE;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-de-mokepon img{   
+    width: 80px;
+}
+
+.tarjeta-de-mokepon:hover {
+    transform: scale(1.1); /* Escalo la tarjeta al 110% cuando se pasa el ratón por encima */
+}
+
+.subtitulo{
+    color: #b02ca5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    font-size: 40px;
+    margin: 20px 0 20px 0;
+}
+
+#seleccionar_ataque{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boton_ataque{
+    background-color: aquamarine;
+    width: 150px;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: 'Concert One', cursive;
+}
+
+#ataque_jugador, 
+#ataque_enemigo, 
+#resultadoRonda{   
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#resultadoJuego,
+#seccionReiniciar{
+    display: flex;
+    justify-content: center;
+    margin-block-end: 20px;
+    font-size: 25px;
+    height: 50px; /* Alto fijo en píxeles */
+    align-items: flex-end;
+}
+
+#resumenJugadores{
+    display: grid;
+    grid-template-columns: 40% 10% 40%;
+    justify-content: space-between;
+}
+
+#resumenJugadores div {
+    font-size: 24px;
+    margin: 0;
+}
+
+#resumenAtaques{
+    display: grid;
+    grid-template-columns: 40% 10% 40%;
+    justify-content: space-evenly;
+    margin: 0;
+    font-size: 18px;
+}
+
+.resumen{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+#resumen-jugador{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#reiniciar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 36px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: 'Concert One', cursive;
+    background-color: #EBC7E8;
+    font-size: 17px;
+    margin: 10px;
+}
+
+#boton_mascota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: 'Concert One', cursive;
+    background-color: #A0D995;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#boton_mascota:hover,
+#boton_mascota:focus{
+    background-color: #62ce4c;
+}
+
+.ataques{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+
+.resumen{
+    font-size: 18px; 
+    line-height: 10px;
+}
+
+
+/* Esto es para Responsive Design */
+@media (max-width: 360px)
+{
+    .tarjetas{
+        flex-direction: column;
+    }
+    .botones_ataque{        
+        flex-direction: column;
+    }
+}
+
+/*Esto sirve para ocultar los input de selección */
+input{
+    display: none;
+}
+
+/* Esto sirve para marcar de diferente color cuando el input está checkeado */
+input:checked + label{
+    background-color: aquamarine;
+}
+
