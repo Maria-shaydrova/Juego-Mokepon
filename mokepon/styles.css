@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300&display=swap');
 
 
-body{
+body {
     font-family: 'Concert One', cursive;
     background-color: #bdb9e4;
 }
 
 h1 {
-    color: white;  
+    color: white;
     display: flex;
     justify-content: center;
 }
 
 .titulo {
     color: white;
-    font-size: 58px;   
-    margin: 20px 0 20px 20px;
+    font-size: 58px;
+    margin: 20px 0 20px 0;
 }
 
 #seleccionar_mascota {
@@ -26,14 +26,16 @@ h1 {
 }
 
 
-.tarjetas, .botones_ataque {
+.tarjetas,
+.botones_ataque {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin: 20px 0px 10px 0px;
 }
 
-.tarjeta-de-mokepon
-{
+.tarjeta-de-mokepon {
     width: 170px;
     height: 100px;
     background: #CBA0AE;
@@ -49,25 +51,26 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.tarjeta-de-mokepon img{   
+.tarjeta-de-mokepon img {
     width: 80px;
 }
 
 .tarjeta-de-mokepon:hover {
-    transform: scale(1.1); /* Escalo la tarjeta al 110% cuando se pasa el ratón por encima */
+    transform: scale(1.1);
+    /* Escalo la tarjeta al 110% cuando se pasa el ratón por encima */
 }
 
-.subtitulo{
+.subtitulo {
     color: #b02ca5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     font-size: 40px;
     margin: 20px 0 20px 0;
 }
 
-#seleccionar_ataque{
+#seleccionar_ataque {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +78,7 @@ h1 {
 }
 
 
-.boton_ataque{
+.boton_ataque {
     background-color: aquamarine;
     width: 150px;
     height: 80px;
@@ -85,26 +88,28 @@ h1 {
     font-family: 'Concert One', cursive;
 }
 
-#ataque_jugador, 
-#ataque_enemigo, 
-#resultadoRonda{   
+#ataque_jugador,
+#ataque_enemigo,
+#resultadoRonda {
     flex-direction: column-reverse;
     align-items: center;
 }
 
 #resultadoJuego,
-#seccionReiniciar{
+#seccionReiniciar {
     display: flex;
     justify-content: center;
     margin-block-end: 20px;
     font-size: 25px;
-    height: 50px; /* Alto fijo en píxeles */
+    height: 50px;
+    /* Alto fijo en píxeles */
     align-items: flex-end;
 }
 
-#resumenJugadores{
+#resumenJugadores {
     display: grid;
-    grid-template-columns: 40% 10% 40%;
+    width: 60vw;
+    grid-template-columns: 40% 10% 50%;
     justify-content: space-between;
 }
 
@@ -113,7 +118,7 @@ h1 {
     margin: 0;
 }
 
-#resumenAtaques{
+#resumenAtaques {
     display: grid;
     grid-template-columns: 40% 10% 40%;
     justify-content: space-evenly;
@@ -121,18 +126,18 @@ h1 {
     font-size: 18px;
 }
 
-.resumen{
+.resumen {
     display: flex;
     justify-content: space-around;
     margin: 0;
 }
 
-#resumen-jugador{
+#resumen-jugador {
     display: flex;
     justify-content: space-evenly;
 }
 
-#reiniciar{
+#reiniciar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +151,7 @@ h1 {
     margin: 10px;
 }
 
-#boton_mascota{
+#boton_mascota {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,40 +166,87 @@ h1 {
 }
 
 #boton_mascota:hover,
-#boton_mascota:focus{
+#boton_mascota:focus {
     background-color: #62ce4c;
 }
 
-.ataques{
+.ataques {
     display: flex;
     width: 60%;
     flex-direction: column;
 }
 
-.resumen{
-    font-size: 18px; 
+.resumen {
+    font-size: 18px;
     line-height: 10px;
 }
 
 
 /* Esto es para Responsive Design */
-@media (max-width: 360px)
-{
-    .tarjetas{
-        flex-direction: column;
+@media (max-width: 510px) {
+    .titulo {
+        font-size: 38px;
     }
-    .botones_ataque{        
-        flex-direction: column;
+
+    .subtitulo {
+        font-size: 28px;
     }
 }
 
+@media (max-width: 445px) {
+    .tarjeta-de-mokepon {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    #resumenJugadores {
+        width: 60vw;
+        grid-template-columns: 40% 10% 50%;
+    }
+}
+
+@media (max-width: 840px) {
+    #resumenJugadores {
+        width: 60vw;
+        grid-template-columns: 30% 10% 55%;
+    }
+}
+
+@media (max-width: 770px) {
+    #resumenJugadores {
+        width: 100%;
+        grid-template-columns: 30% 20% 50%;
+    }
+
+    .ataques {
+        width: 100%;
+    }
+}
+
+@media (max-width: 515px) {
+    #resumenJugadores {
+        width: 100%;
+        grid-template-columns: 30% 20% 50%;
+    }
+
+    #resumenJugadores div {
+        font-size: 19px;
+    }
+
+    #resultadoJuego,
+    #seccionReiniciar {
+        font-size: 21px;
+    }
+}
+
+
 /*Esto sirve para ocultar los input de selección */
-input{
+input {
     display: none;
 }
 
 /* Esto sirve para marcar de diferente color cuando el input está checkeado */
-input:checked + label{
+input:checked+label {
     background-color: aquamarine;
 }
-
